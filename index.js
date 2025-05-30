@@ -254,19 +254,6 @@ const calculator = function (params) {
   }
 };
 
-// // Examples with different compound frequencies
-// console.log("=== USD Example with Daily Compounding ===");
-// calculator(25, 65, 500, 1000, 500000, 0.07, "USD", 0.01, "daily");
-
-// console.log("\n=== EUR Example with Quarterly Compounding ===");
-// calculator(30, 60, 300, 5000, 200000, 0.05, "EUR", 0.02, "quarterly");
-
-// console.log("\n=== GBP Example with Yearly Compounding ===");
-// calculator(20, 60, 50, 100, 50000, 0.03, "GBP", 0, "yearly");
-
-// console.log("\n=== GBP Example with Monthly Compounding (Default) ===");
-// calculator(20, 60, 50, 100, 50000, 0.03, "GBP", 0.005, "monthly");
-
 calculator({
   currAge: 25,
   retireAge: 65,
