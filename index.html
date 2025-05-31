@@ -3,15 +3,165 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Retirement Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <h1>Retirement Calculator</h1>
-    </main>
-    <script src="index.js"></script>
+    <div class="container">
+      <div class="header">
+        <h1>💰 Retirement Calculator</h1>
+        <p>Plan your financial future with compound interest projections</p>
+      </div>
+
+      <div class="calculator-wrapper">
+        <div class="input-panel">
+          <h2>📊 Your Details</h2>
+          <form id="calculatorForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="currAge">Current Age</label>
+                <input
+                  type="number"
+                  id="currAge"
+                  value="25"
+                  min="12"
+                  max="100"
+                />
+              </div>
+              <div class="form-group">
+                <label for="retireAge">Retirement Age</label>
+                <input
+                  type="number"
+                  id="retireAge"
+                  value="65"
+                  min="50"
+                  max="116"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="investPM">Monthly Investment</label>
+                <input
+                  type="number"
+                  id="investPM"
+                  value="500"
+                  min="0"
+                  step="10"
+                />
+              </div>
+              <div class="form-group">
+                <label for="initialInvestment">Initial Investment</label>
+                <input
+                  type="number"
+                  id="initialInvestment"
+                  value="1000"
+                  min="0"
+                  step="100"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="retireGoal">Retirement Goal</label>
+              <input
+                type="number"
+                id="retireGoal"
+                value="500000"
+                min="0"
+                step="1000"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="interestRate">Interest Rate (%)</label>
+                <input
+                  type="number"
+                  id="interestRate"
+                  value="7"
+                  min="0"
+                  max="20"
+                  step="0.1"
+                />
+              </div>
+              <div class="form-group">
+                <label for="rateVariation">Rate Variation (±%)</label>
+                <input
+                  type="number"
+                  id="rateVariation"
+                  value="1"
+                  min="0"
+                  max="10"
+                  step="0.1"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="currency">Currency</label>
+                <select id="currency">
+                  <option value="USD">USD ($)</option>
+                  <option value="GBP">GBP (£)</option>
+                  <option value="EUR">EUR (€)</option>
+                  <option value="JPY">JPY (¥)</option>
+                  <option value="CAD">CAD (C$)</option>
+                  <option value="AUD">AUD (A$)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="compoundFrequency">Compounding</label>
+                <select id="compoundFrequency">
+                  <option value="daily">Daily</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="quarterly">Quarterly</option>
+                  <option value="yearly">Yearly</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="calculate-btn">
+              Calculate My Retirement 🚀
+            </button>
+          </form>
+        </div>
+
+        <div class="results-panel">
+          <div id="results" class="hidden">
+            <div class="results-section">
+              <h3>💼 Investment Projections</h3>
+              <div id="projectionResults"></div>
+            </div>
+
+            <div class="results-section">
+              <h3>🎯 Goal Analysis</h3>
+              <div id="goalResults"></div>
+            </div>
+
+            <div class="results-section">
+              <h3>💳 Retirement Income</h3>
+              <div id="incomeResults"></div>
+            </div>
+
+            <div class="info-box">
+              <h4>📈 Inflation Impact</h4>
+              <p id="inflationInfo"></p>
+            </div>
+          </div>
+
+          <div id="placeholder" class="results-section">
+            <h3>👈 Enter your details and click calculate</h3>
+            <p style="color: #666; margin-top: 15px">
+              Your retirement projections and analysis will appear here once you
+              submit the form.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
